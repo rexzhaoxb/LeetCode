@@ -2,6 +2,8 @@ package com.leetcode.p0206;
 
 // 206. 反转链表
 
+import com.leetcode.common.ListNode;
+
 import java.util.Stack;
 
 public class ReverseLinkedList {
@@ -50,32 +52,5 @@ public class ReverseLinkedList {
 
         System.out.println(head);
         System.out.println(reverseList(head));
-    }
-
-
-    public static class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) {
-            val = x;
-        }
-
-        @Override
-        public String toString() {
-            ListNode current = this;
-            StringBuilder sb = new StringBuilder();
-
-            sb.append(String.valueOf(current.val));
-
-            while (current.next != null) {
-                current = current.next;
-                sb.append(" -> ");
-                sb.append(String.valueOf(current.val));
-            }
-
-            sb.append(" -> NULL");
-
-            return sb.toString();
-        }
     }
 }

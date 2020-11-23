@@ -26,4 +26,8 @@ public class ListNode {
 
         return sb.toString();
     }
+
+    public int getVal() {
+        return val;
+    }
 }

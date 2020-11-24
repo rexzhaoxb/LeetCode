@@ -15,11 +15,13 @@ public class ListNode {
         StringBuilder sb = new StringBuilder();
 
         sb.append(current.val);
+        int i = 0;
 
-        while (current.next != null) {
+        while (current.next != null && i < 20) {
             current = current.next;
             sb.append(" -> ");
             sb.append(current.val);
+            i++;
         }
 
         sb.append(" -> NULL");

@@ -10,15 +10,15 @@ public class ReverseNodesInKGroup {
         ListNode lastGroup = new ListNode(-1, head), newHead = head, node = null;
 
         while (lastGroup.next != null) {
-            // 记住组内第一个元素
-            node = lastGroup;
+            // 先记住组内第一个元素
             ListNode firstItemInGroup = lastGroup.next;
-            // 先找到这一组中最后一个元素
+            // 然后找到这一组中最后一个元素
+            node = lastGroup;
             for (int i = 0; i < k; i++) {
                 node = node.next;
                 if (node == null) return newHead;
             }
-            lastGroup.next = node;
+            lastGroup.next = node;  // 最后一个元素将成为本组第一个元素
             if (newHead == head) newHead = node;
             // 本组第一个元素将成为与下组的链接
             lastGroup = firstItemInGroup;
@@ -44,8 +44,8 @@ public class ReverseNodesInKGroup {
         head.next.next.next.next = new ListNode(5);
 
         System.out.println(head);
-        System.out.println(reverseKGroup(head, 1));
-//        System.out.println(reverseKGroup(head, 2));
+//        System.out.println(reverseKGroup(head, 1));
+        System.out.println(reverseKGroup(head, 2));
 //        System.out.println(reverseKGroup(head, 3));
 //        System.out.println(reverseKGroup(head, 4));
 //        System.out.println(reverseKGroup(head, 5));
